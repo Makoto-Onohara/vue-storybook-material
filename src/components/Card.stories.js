@@ -10,6 +10,13 @@ export default {
    */
   title: "Card",
   component: Card,
+  argTypes: {
+    title: "String",
+    subHeader: "String",
+    mediaHref: "String",
+    supportingText: "String",
+    buttonText: "String",
+  },
 };
 
 //👇 We create a “template” of how args map to rendering
@@ -22,10 +29,29 @@ const Template = (args) => ({
   template: '<Card v-bind="args"/>',
 });
 
-export const FirstStory = Template.bind({});
+export const Primary = Template.bind({});
+Primary.args = { title: "Primary", subHeader: "Secondary" };
 
-FirstStory.args = {
-  /* 👇 The args you need here will depend on your component */
+export const Secondary = Template.bind({});
+Secondary.args = {
   title: "Primary",
-  subText: "Secondary",
+  subHeader: "Media text",
+  mediaHref: "favicon.ico",
+};
+
+export const Third = Template.bind({});
+Third.args = {
+  title: "Primary",
+  subHeader: "Example with supporting text",
+  mediaHref: "favicon.ico",
+  supportingText: "supportingText",
+};
+
+export const Fourth = Template.bind({});
+Fourth.args = {
+  title: "Primary",
+  subHeader: "Example with supporting text",
+  mediaHref: "favicon.ico",
+  supportingText: "supportingText",
+  buttonText: "go",
 };
